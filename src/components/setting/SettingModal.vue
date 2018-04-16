@@ -72,11 +72,6 @@
 </template>
 <script>
 import {
-  buttonGroup,
-  radio,
-  modal
-} from 'vue-strap'
-import {
   mapGetters,
   mapActions
 } from 'vuex'
@@ -126,9 +121,6 @@ export default {
     ])
   },
   components: {
-    radio,
-    buttonGroup,
-    modal,
     AllowRow
   }
 }

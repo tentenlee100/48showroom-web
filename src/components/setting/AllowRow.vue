@@ -16,10 +16,6 @@
     </div>
 </template>
 <script>
-import {
-  buttonGroup,
-  radio
-} from 'vue-strap'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
@@ -69,8 +65,7 @@ export default {
     //do something after mounting vue instance
   },
   components: {
-    buttonGroup,
-    radio
+
   }
 }
 </script>
