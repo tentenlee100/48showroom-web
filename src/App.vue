@@ -22,6 +22,7 @@ export default {
 </script>
 
 <style>
+@import './node_modules/bootstrap/scss/bootstrap.scss';
 .material {
   @import "~vue-snotify/styles/material.css"
 }
