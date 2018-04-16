@@ -6,9 +6,6 @@
         <template v-for="live in livingData">
           <live-type :data="live"></live-type>
         </template>
-        <template v-for="live in tpeData">
-          <live-type :data="live"></live-type>
-        </template>
         <template v-if="((livingData && livingData.length == 0) && (tpeData && tpeData.length == 0)) && !loading ">
           <h1  class="text-center">目前沒有成員開台</h1>
         </template>
@@ -39,7 +36,7 @@ import ScheduleCell from './ScheduleCell'
 import Spinner from 'vue-simple-spinner'
 export default {
   name:"live-water-fall",
-  props: ['loading','livingData','scheduleData','scheduleLoading' ,'tpeData'],
+  props: ['loading','livingData','scheduleData','scheduleLoading' ],
   data: () => ({
 
   }),

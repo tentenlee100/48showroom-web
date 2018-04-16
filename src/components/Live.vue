@@ -23,7 +23,7 @@
         <spinner v-show="loading" class="spinner loading-view" size="Medium"></spinner>
       </div>
       <!-- <template v-if="showImage"> -->
-        <live-water-fall :loading="loading" :livingData="livingData" :tpeData="tpeData" :scheduleData="scheduleData" :scheduleLoading="scheduleLoading"   ></live-water-fall>
+        <live-water-fall :loading="loading" :livingData="livingData" :scheduleData="scheduleData" :scheduleLoading="scheduleLoading"   ></live-water-fall>
 
       <!-- </template>
       <template v-else>
@@ -57,7 +57,6 @@ export default {
     scheduleLoading: true,
     openSetting: false,
     livingData: {},
-    tpeData: {},
     scheduleData:[],
   }),
   watch: {
@@ -77,7 +76,6 @@ export default {
   methods: {
     reloadAction(){
       this.callLiveApi()
-      this.callTpeApi()
       this.callScheduleApi()
     },
     callLiveApi() {
@@ -89,22 +87,6 @@ export default {
         // get body data
         // this.livingData = response.body
         this.$set(this,'livingData',response.body)
-        this.loading = false
-
-      }, response => {
-        this.loading = false
-      })
-    },
-    callTpeApi() {
-      this.loading = true
-      const body = {
-        allow: this.userAllow.reduce((sum ,value) => {return sum += value + '|' } , "")
-      }
-      this.$http.post(ApiUrl.getTpe, body,{emulateJSON:true}).then(response => {
-        // get body data
-        // this.livingData = response.body
-
-        this.$set(this,'tpeData',response.body)
         this.loading = false
 
       }, response => {
