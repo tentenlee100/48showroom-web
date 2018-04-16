@@ -1,74 +1,62 @@
 <template>
-<modal v-model="openSetting" title="設定" :large="true" @closed="onclose">
-  <div slot="default">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="form-horizontal">
-          <!-- Text input-->
-          <template v-for="allowType in allAllowType">
+<b-modal v-model="openSetting" size="lg" title="設定" @hidden="onclose">
+
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <!-- Text input-->
+        <template v-for="allowType in allAllowType">
                 <allow-row :allowType="allowType"></allow-row>
             </template>
+      </div>
+    </div>
+    <div class="col-12">
+      <hr>
+    </div>
+    <div class="col-12 px-3 d-flex flex-column flex-lg-row justify-content-start justify-content-lg-around align-items-stretch">
+      <!-- Text input-->
+      <div class="form-group">
+        <div class="row">
+          <label class="col-6 col-form-label">是否要顯示低畫質</label>
+          <div class="col-6">
+            <b-form-radio-group v-model="lowUrlStatus" buttons button-variant="primary">
+              <b-form-radio value="0">顯示</b-form-radio>
+              <b-form-radio value="1">不要顯示</b-form-radio>
+            </b-form-radio-group>
+          </div>
         </div>
       </div>
-      <div class="col-xs-12">
-        <hr>
-      </div>
-      <div class="col-xs-12">
-        <div class="form-horizontal">
-          <!-- Text input-->
-          <div class="col-xs-12 col-md-6">
-            <div class="row">
-              <div class="form-group">
-                <label class="col-xs-6 control-label" for="title">是否要顯示低畫質</label>
-                <div class="col-xs-6">
-                  <div class="row">
-                    <button-group v-model="lowUrlStatus" type="primary">
-                      <radio selected-value="0">顯示</radio>
-                      <radio selected-value="1">不要顯示</radio>
-                    </button-group>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-xs-12 col-md-6">
-            <div class="row">
-              <div class="form-group">
-                <label class="col-xs-6 control-label" for="title">是否要顯示圖片</label>
-                <div class="col-xs-6">
-                  <div class="row">
-                    <button-group v-model="showImageStatus" type="primary">
-                      <radio selected-value="0">顯示</radio>
-                      <radio selected-value="1">不要顯示</radio>
-                    </button-group>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="form-group  ">
+        <div class="row">
+
+        <label class="col-6 col-form-label">是否要顯示圖片</label>
+        <div class="col-6">
+          <b-form-radio-group v-model="showImageStatus" buttons button-variant="primary">
+            <b-form-radio value="0">顯示</b-form-radio>
+            <b-form-radio value="1">不要顯示</b-form-radio>
+          </b-form-radio-group>
         </div>
       </div>
-      <div class="col-xs-12">
-        <hr/>
-      </div>
-      <div class="col-xs-12">
-        <div class="pull-right">
-          <div class="noMargin" style="display:inline-block; padding : 0px ;">
-            <h4 class="noMargin" style="padding : 0px ;"><small>若有幫助到你，歡迎贊助我</small></h4>
-          </div>
-          <a style=" display:inline; margin-bottom: 5px; margin-right: 10px; margin-left: 10px;" target="_blank" href="https://p.allpay.com.tw/Vzg5f">
-            <img style="height: 40px; display:inline; margin-bottom: 10px;"  src="https://payment.allpay.com.tw/Content/themes/WebStyle201404/images/allpay.png" />
-          </a>
-        </div>
+
       </div>
 
     </div>
+    <div class="col-12">
+      <hr/>
+    </div>
+    <div class="col-12 d-flex">
+      <h4 class="m-0 ml-auto p-0"><small>若有幫助到你，歡迎贊助我</small></h4>
+      <a style=" display:inline; margin-bottom: 5px; margin-right: 10px; margin-left: 10px;" target="_blank" href="https://p.allpay.com.tw/Vzg5f">
+            <img style="height: 40px; display:inline; margin-bottom: 10px;"  src="https://payment.allpay.com.tw/Content/themes/WebStyle201404/images/allpay.png" />
+          </a>
+    </div>
+
   </div>
-  <div slot="modal-footer" class="modal-footer">
+  <div slot="modal-footer">
     <button type="button" class="btn btn-default" @click="()=>{this.openSetting = false ; this.onclose()}">關閉</button>
   </div>
-</modal>
+</b-modal>
 </template>
 <script>
 import {
@@ -76,6 +64,11 @@ import {
   mapActions
 } from 'vuex'
 import AllowRow from './AllowRow'
+import bModal from 'bootstrap-vue/es/components/modal/modal';
+import bFormRadioGroup from 'bootstrap-vue/es/components/form-radio/form-radio-group';
+import bFormRadio from 'bootstrap-vue/es/components/form-radio/form-radio';
+import bFormGroup from 'bootstrap-vue/es/components/form-group/form-group';
+
 
 export default {
   name: "setting-modal",
@@ -121,7 +114,13 @@ export default {
     ])
   },
   components: {
-    AllowRow
+    AllowRow,
+    'b-modal': bModal,
+    'b-form-radio': bFormRadio,
+    'b-form-radio-group': bFormRadioGroup,
+    'b-modal': bModal,
+    'b-form-group': bFormGroup,
+
   }
 }
 </script>

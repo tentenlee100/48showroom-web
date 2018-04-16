@@ -1,48 +1,43 @@
 <template>
   <div>
     <div class="container">
-      <div class="row ">
-        <div class="col-xs-12">
-          <div class="inline-block text-left">
-            <a class="inline-block" href="https://www.ptt.cc/bbs/AKB48/M.1465937353.A.1BA.html" target="_blank" role="button">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex ">
+            <a class="mx-1" href="https://www.ptt.cc/bbs/AKB48/M.1465937353.A.1BA.html" target="_blank" role="button">
               <button class="btn btn-sm ">使用方式</button>
             </a>
-            <div class="inline-block hidden-xs">
+            <div class="mx-1 hidden-xs">
               <a href="https://chrome.google.com/webstore/detail/block-showroom-auto-play/bplaohanggidfnokiamhhpoiipnopdne" target="_blank" role="button">
                 <button class="btn btn-sm btn-danger">chrome 外掛</button>
               </a>
               <small>停止播放youtube</small>
             </div>
           </div>
-          <div class="inline-block pull-right">
-            <button @click="reloadAction" class="btn btn-lg btn-info"><i class="fa fa-refresh" aria-hidden="true"></i></button>
-          </div>
+          <button @click="reloadAction" class="btn btn-lg btn-info"><font-awesome-icon icon="sync" /></button>
         </div>
-      </div>
-      <div class="col-xs-12 text-center " >
+      <!-- <div class="col-12 d-flex justify-content-center" >
         <spinner v-show="loading" class="spinner loading-view" size="Medium"></spinner>
-      </div>
+      </div> -->
       <live-water-fall :loading="loading" :livingData="livingData" :scheduleData="scheduleData" :scheduleLoading="scheduleLoading"   ></live-water-fall>
     </div>
     <div class="float-btns">
-      <button @click="openSetting = true" type="button" class="float-btn-item  btn btn-default" data-toggle="modal" data-target="#settingModal"><i class="fa fa-cog" aria-hidden="true" ></i></button>
-      <button v-scroll-to="{el: 'body' , duration: 50}" type="button" class="float-btn-item btn btn-default"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
-      <button @click="reloadAction" class="btn btn-info float-btn-item"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+      <button @click="openSetting = true" type="button" class="float-btn-item  btn btn-default" data-toggle="modal" data-target="#settingModal"><font-awesome-icon icon="cog" /></button>
+      <button v-scroll-to="{el: 'body' , duration: 50}" type="button" class="float-btn-item btn btn-default"><font-awesome-icon icon="chevron-up" /></button>
+      <button @click="reloadAction" class="btn btn-info float-btn-item"><font-awesome-icon icon="sync" /></button>
     </div>
-      <setting-modal :needOpen="openSetting" v-on:closeModal="()=>{this.openSetting = false}"></setting-modal>
+    <setting-modal :needOpen="openSetting" v-on:closeModal="()=>{this.openSetting = false}"></setting-modal>
   </div>
 </template>
 <script>
 import Spinner from 'vue-simple-spinner'
 import SettingModal from './setting/SettingModal'
 import LiveWaterFall from './live_waterfall/LiveWaterFall'
-
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+import { faCoffee } from '@fortawesome/fontawesome-free-solid'
 
 import ApiUrl from '@/config/ApiUrl'
 import { mapGetters, mapActions } from 'vuex'
-import {
- Modal
-} from 'uiv'
+
 export default {
   name: "live",
   data: () => ({
@@ -68,7 +63,7 @@ export default {
   },
   methods: {
     reloadAction(){
-      this.callLiveApi()
+      // this.callLiveApi()
       this.callScheduleApi()
     },
     callLiveApi() {
@@ -105,12 +100,10 @@ export default {
   },
   mounted() {
     //do something after mounting vue instance
-    this.callLiveApi()
-    this.callTpeApi()
+    // this.callLiveApi()
     this.callScheduleApi()
-    setInterval(this.callLiveApi, 60000);
-    setInterval(this.callTpeApi, 60000);
-    setInterval(this.callScheduleApi, 5*60000);
+    // setInterval(this.callLiveApi, 60000);
+    setInterval(this.callScheduleApi, 10*60000);
   },
   computed: {
     ...mapGetters([
@@ -122,8 +115,8 @@ export default {
   components: {
     Spinner,
     LiveWaterFall,
-    Modal,
-    SettingModal
+    SettingModal,
+    FontAwesomeIcon
   }
 }
 </script>

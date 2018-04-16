@@ -1,4 +1,23 @@
 <template>
+<b-navbar toggleable="md" type="dark" variant="dark" fixed="top">
+  <b-navbar-brand to="/">SHOWROOM 48</b-navbar-brand>
+  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+  <b-collapse is-nav id="nav_collapse">
+    <b-navbar-nav class="ml-auto">
+      <b-nav-item to="/" exact>正在直播中</b-nav-item>
+      <!-- <b-nav-item to="/getUrl" exact>取得觀看url</b-nav-item> -->
+      <b-nav-item href="http://sr48.net/" target="_blank" exact>日飯分析</b-nav-item>
+
+      <b-nav-item-dropdown text="各活動頁" extra-toggle-classes="nav-link-custom" right>
+        <template v-for="elem in pages" >
+          <b-dropdown-item :key="elem.key" :href="elem.url" target="_blank" >{{elem.name}}</b-dropdown-item>
+        </template>
+      </b-nav-item-dropdown>
+    </b-navbar-nav>
+  </b-collapse>
+</b-navbar>
+
+<!--
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -33,14 +52,18 @@
       </ul>
     </collapse>
   </div>
-</nav>
+</nav> -->
 </template>
 <script>
-import {
-  Dropdown,
-  Navbar,
-  Collapse
-} from 'uiv'
+import bNavbar from 'bootstrap-vue/es/components/navbar/navbar'
+import bNavbarNav from 'bootstrap-vue/es/components/navbar/navbar-nav'
+import bNavbarBrand from 'bootstrap-vue/es/components/navbar/navbar-brand'
+import bNavbarToggle from 'bootstrap-vue/es/components/navbar/navbar-toggle'
+import bCollapse from 'bootstrap-vue/es/components/collapse/collapse'
+import bNavItem from 'bootstrap-vue/es/components/nav/nav-item'
+import bNavItemDropdown from 'bootstrap-vue/es/components/nav/nav-item-dropdown'
+import bDropdownItem from 'bootstrap-vue/es/components/dropdown/dropdown-item'
+
 export default {
   name: "navbar",
   data: () => ({
@@ -62,8 +85,8 @@ export default {
         name: "=LOVE"
       },
       {
-        url: "https://www.showroom-live.com/campaign/akbdraft3rd",
-        name: "第3回 AKB48グループドラフト会議"
+        url: "https://www.showroom-live.com/event/ngt48_2nd_audition",
+        name: "NGT48 第2期生オーディション"
       },
       {
         url: "https://www.showroom-live.com/campaign/last-idol",
@@ -73,9 +96,14 @@ export default {
     ],
   }),
   components: {
-    Dropdown,
-    Navbar,
-    Collapse
+    'b-navbar': bNavbar,
+    'b-navbar-nav': bNavbarNav,
+    'b-navbar-brand': bNavbarBrand,
+    'b-navbar-toggle': bNavbarToggle,
+    'b-collapse': bCollapse,
+    'b-nav-item': bNavItem,
+    'b-nav-item-dropdown': bNavItemDropdown,
+    'b-dropdown-item': bDropdownItem
   }
 }
 </script>
