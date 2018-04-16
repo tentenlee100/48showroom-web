@@ -18,7 +18,6 @@
 </template>
 <script>
 import LiveCell from './LiveCell'
-import LiveTpeCell from './LiveTpeCell'
 
 export default {
   name: "live-type",
@@ -28,7 +27,6 @@ export default {
   }),
   components: {
     LiveCell,
-    LiveTpeCell
   }
 }
 </script>
