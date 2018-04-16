@@ -17,16 +17,22 @@
     <hr class="featurette-divider" />
   </div>
   <div class="col-12">
+
     <h1 class="text-center ml-auto align-self-center">預計開播成員時程表</h1>
-    <div class="col-12 d-flex justify-content-center">
-      <spinner v-show="scheduleLoading" class="spinner loading-view" size="Medium"></spinner>
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <spinner v-show="scheduleLoading" class="spinner loading-view" size="Medium"></spinner>
+      </div>
+      <div class="col-12 px-0" >
+        <div v-masonry transition-duration="0.3s" item-selector=".item">
+          <template v-masonry-tile v-for="live in scheduleData">
+                <!-- block item markup -->
+                <schedule-cell :data="live"></schedule-cell>
+              </template>
+        </div>
+      </div>
     </div>
-    <div v-masonry transition-duration="0.3s" item-selector=".item">
-      <template v-masonry-tile v-for="live in scheduleData">
-            <!-- block item markup -->
-            <schedule-cell :data="live"></schedule-cell>
-          </template>
-    </div>
+
   </div>
 </div>
 </template>

@@ -1,8 +1,8 @@
 <template>
-<div class="item  col-12 col-lg-6 ">
+<div class="item  col-12 col-md-6 px-1">
   <a class="card  my-2 mx-1 d-flex p-2 justify-content-between align-items-stretch  " :href="'https://www.showroom-live.com/' + data.id" target="_blank">
     <div class="card-body p-1 row no-gutters">
-      <div v-if="showImage" class=" col-12 col-sm-6  col-lg-6 col-xl-5 d-flex align-items-center">
+      <div v-if="showImage" class=" col-12 col-sm-6 col-md-12 col-lg-6 col-xl-5 d-flex align-items-center">
         <img class="img-fluid " :src="data.imageUrl">
       </div>
       <div class="px-1 d-flex col flex-column">

@@ -6,7 +6,7 @@
     <b-navbar-nav class="ml-auto">
       <b-nav-item to="/" exact>正在直播中</b-nav-item>
       <!-- <b-nav-item to="/getUrl" exact>取得觀看url</b-nav-item> -->
-      <b-nav-item href="http://sr48.net/" target="_blank" exact>日飯分析</b-nav-item>
+      <!-- <b-nav-item href="http://sr48.net/" target="_blank" exact>日飯分析</b-nav-item> -->
 
       <b-nav-item-dropdown text="各活動頁" extra-toggle-classes="nav-link-custom" right>
         <template v-for="elem in pages" >
