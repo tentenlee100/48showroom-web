@@ -22,13 +22,7 @@
       <div class="col-xs-12 text-center " >
         <spinner v-show="loading" class="spinner loading-view" size="Medium"></spinner>
       </div>
-      <!-- <template v-if="showImage"> -->
-        <live-water-fall :loading="loading" :livingData="livingData" :scheduleData="scheduleData" :scheduleLoading="scheduleLoading"   ></live-water-fall>
-
-      <!-- </template>
-      <template v-else>
-        <live-table :livingData="livingData" :scheduleData="scheduleData" :tpeData="tpeData"  :scheduleLoading="scheduleLoading" ></live-table>
-      </template> -->
+      <live-water-fall :loading="loading" :livingData="livingData" :scheduleData="scheduleData" :scheduleLoading="scheduleLoading"   ></live-water-fall>
     </div>
     <div class="float-btns">
       <button @click="openSetting = true" type="button" class="float-btn-item  btn btn-default" data-toggle="modal" data-target="#settingModal"><i class="fa fa-cog" aria-hidden="true" ></i></button>
@@ -42,7 +36,6 @@
 import Spinner from 'vue-simple-spinner'
 import SettingModal from './setting/SettingModal'
 import LiveWaterFall from './live_waterfall/LiveWaterFall'
-import LiveTable from './live_table/LiveTable'
 
 
 import ApiUrl from '@/config/ApiUrl'
@@ -129,7 +122,6 @@ export default {
   components: {
     Spinner,
     LiveWaterFall,
-    LiveTable,
     Modal,
     SettingModal
   }
