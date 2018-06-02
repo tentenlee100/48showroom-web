@@ -7,10 +7,10 @@
               <button class="btn btn-sm ">使用方式</button>
             </a>
             <div class="mx-1 hidden-xs">
-              <a href="https://chrome.google.com/webstore/detail/block-showroom-auto-play/bplaohanggidfnokiamhhpoiipnopdne" target="_blank" role="button">
+              <a href="https://bit.ly/2HjQza9" target="_blank" role="button">
                 <button class="btn btn-sm btn-danger">chrome 外掛</button>
               </a>
-              <small>停止播放youtube</small>
+              <small>舊版本所有功能</small>
             </div>
           </div>
           <button @click="reloadAction" class="btn btn-lg btn-info"><font-awesome-icon icon="sync" /></button>
@@ -32,6 +32,7 @@
 import Spinner from 'vue-simple-spinner'
 import SettingModal from './setting/SettingModal'
 import LiveWaterFall from './live_waterfall/LiveWaterFall'
+
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 import { faCoffee } from '@fortawesome/fontawesome-free-solid'
 
@@ -116,7 +117,7 @@ export default {
     Spinner,
     LiveWaterFall,
     SettingModal,
-    FontAwesomeIcon
+    FontAwesomeIcon,
   }
 }
 </script>

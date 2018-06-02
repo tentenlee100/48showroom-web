@@ -10,7 +10,13 @@ import VueClipboard from 'vue-clipboard2'
 import Snotify from 'vue-snotify'
 import VueScrollTo from 'vue-scrollto';
 import VueAnalytics from 'vue-analytics'
+import BootstrapVue from 'bootstrap-vue'
+import Datetime from 'vue-datetime'
+// You need a specific loader for CSS files
+import 'vue-datetime/dist/vue-datetime.css'
 
+Vue.use(Datetime)
+Vue.use(BootstrapVue);
 Vue.use(VueResource)
 Vue.use(VueMasonryPlugin)
 Vue.use(VueClipboard)
