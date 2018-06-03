@@ -22,7 +22,7 @@
         {{data.item.createTime.substr(11,5)}}
       </template>
       <template slot="modifyTime" slot-scope="data">
-        {{data.item.modifyTime.substr(11,5)}}
+        {{ data.item.living === '1' ? "正在直播中" :  data.item.modifyTime.substr(11,5)}}
       </template>
       <template slot="function" slot-scope="data">
     <!-- A custom formatted data column cell -->
@@ -44,8 +44,8 @@ import {
 export default {
   name: "",
   data: () => ({
-    date: moment().add(1, 'days').format(),
-    maxDate: moment().format(),
+    date: moment().utc().local().format(),
+    maxDate: moment().utc().local().format(),
     loading: false,
     items: [],
     fields: [
