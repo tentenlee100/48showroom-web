@@ -5,20 +5,18 @@ import App from './App'
 import router from './router'
 import VueResource from 'vue-resource'
 import store from './store'
-import {VueMasonryPlugin} from 'vue-masonry';
 import VueClipboard from 'vue-clipboard2'
 import Snotify from 'vue-snotify'
 import VueScrollTo from 'vue-scrollto';
 import VueAnalytics from 'vue-analytics'
 import BootstrapVue from 'bootstrap-vue'
-import Datetime from 'vue-datetime'
 // You need a specific loader for CSS files
-import 'vue-datetime/dist/vue-datetime.css'
+import flatPickr from 'vue-flatpickr-component';
+import 'flatpickr/dist/flatpickr.css';
 
-Vue.use(Datetime)
+Vue.use(flatPickr);
 Vue.use(BootstrapVue);
 Vue.use(VueResource)
-Vue.use(VueMasonryPlugin)
 Vue.use(VueClipboard)
 Vue.use(Snotify)
 Vue.use(VueScrollTo)

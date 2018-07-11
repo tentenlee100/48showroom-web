@@ -31,4 +31,7 @@ body {
   padding-bottom: 70px;
   background-color: #fafafa;
 }
+.date-picker{
+  font-size: 16px;
+}
 </style>
