@@ -28,10 +28,10 @@ export default {
         url: "https://www.showroom-live.com/campaign/akb48_sr",
         name: "AKB48 Group"
       },
-      {
-        url: "https://www.showroom-live.com/event/tpe48_tgctym18 ",
-        name: "TPE48成員 TGC富山2018時尚秀登台機會爭奪戰"
-      },
+      // {
+      //   url: "https://www.showroom-live.com/event/tpe48_tgctym18 ",
+      //   name: "TPE48成員 TGC富山2018時尚秀登台機會爭奪戰"
+      // },
       {
         url: "https://www.showroom-live.com/campaign/nogizaka46_sr",
         name: "乃木坂46"

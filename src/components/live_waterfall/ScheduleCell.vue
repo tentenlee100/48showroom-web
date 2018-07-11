@@ -1,17 +1,17 @@
 <template>
-<div class="item  col-12 col-md-6 px-1">
-  <a class="card  my-2 mx-1 d-flex p-2 justify-content-between align-items-stretch  " :href="'https://www.showroom-live.com/' + data.id" target="_blank">
-    <div class="card-body p-1 row no-gutters">
-      <div v-if="showImage" class=" col-12 col-sm-6 col-md-12 col-lg-6 col-xl-5 d-flex align-items-center">
-        <img class="img-fluid " :src="data.imageUrl">
-      </div>
-      <div class="px-1 d-flex col flex-column">
-        <h5 class="mx-2 mx-sm-0 "><strong>{{data.name}}</strong></h5>
-        <div class="mt-auto mb-2 mb-sm-0 d-flex flex-lg-column flex-xl-row flex-md-row flex-sm-column  justify-content-around  ">
-          <h5 class="m-0 ">預計開台時間:</h5>
-          <h5 class="m-0">{{data.onLiveTime}}</h5>
+<div class="col-12 col-md-6 p-0 m-0 my-1">
+  <a class="card h-100 m-1 " :href="'https://www.showroom-live.com/' + data.id" target="_blank">
+    <div class="card-body p-1 d-flex flex-column flex-sm-row flex-md-column flex-lg-row justify-content-between ">
+        <div v-if="showImage" class=" col-12 col-sm-6   col-md-12 col-lg-6 col-xl-5">
+          <img class="img-fluid mx-auto d-block " :src="data.imageUrl">
         </div>
-      </div>
+        <div class="px-1 w-100 d-flex flex-column">
+          <h5 class="mx-2 mx-sm-0 "><strong>{{data.name}}</strong></h5>
+          <div class="mt-auto mb-2 mb-sm-0 d-flex flex-row  flex-sm-column flex-md-row flex-lg-column flex-xl-row justify-content-between  ">
+            <h5 class="m-0 ">預計開台時間:</h5>
+            <h5 class="m-0">{{data.onLiveTime}}</h5>
+          </div>
+        </div>
     </div>
   </a>
 </div>

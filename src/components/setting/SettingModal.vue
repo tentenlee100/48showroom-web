@@ -5,9 +5,9 @@
     <div class="col-12">
       <div class="row">
         <!-- Text input-->
-        <template v-for="allowType in allAllowType">
+        <!-- <template v-for="allowType in allAllowType">
                 <allow-row :allowType="allowType"></allow-row>
-            </template>
+            </template> -->
       </div>
     </div>
     <div class="col-12">
