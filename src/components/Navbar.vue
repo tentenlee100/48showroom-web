@@ -41,8 +41,16 @@ export default {
         name: "櫸板46"
       },
       {
+        url: "https://www.showroom-live.com/campaign/hinatazaka46_sr",
+        name: "日向坂46"
+      },
+      {
         url: "https://www.showroom-live.com/campaign/Equal_LOVE",
         name: "=LOVE"
+      },
+      {
+        url: "https://www.showroom-live.com/campaign/Notequal_ME",
+        name: "≠ME"
       },
       {
         url: "https://www.showroom-live.com/campaign/last-idol",
